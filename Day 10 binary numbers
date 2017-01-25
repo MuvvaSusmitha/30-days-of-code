@@ -1,0 +1,49 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        boolean flag =false;
+      List<Integer> l = new ArrayList<Integer>();
+        int count =0, max =0;
+        while(n>0)
+            {
+            int rem =n%2;
+            n = n/2;
+            l. add(rem);
+            }
+        
+        if((l.contains(1))&& (flag == false)){
+            count =1;
+            if(count >max)
+                max = count;
+            flag = true;
+        }
+        
+        if((l.contains(1))&& (flag == true)){
+            
+            for (int i = 1; i < l.size(); i++) {
+                if(l.get(i-1)==1){
+                    if(l.get(i)==1){
+                        count++;
+                        if(count > max)
+                          max = count;
+                    }
+                    else 
+                        count =1;
+                }
+                else
+                    count =1;
+                        
+            }
+          }
+        System.out.println(max);
+    }
+        
+}
